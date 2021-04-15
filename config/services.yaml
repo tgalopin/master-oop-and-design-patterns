@@ -29,3 +29,10 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    _instanceof:
+        App\CityFetcher\LocalCityFetcherInterface:
+            tags: ['app.local_city_fetcher']
+
+    App\CityFetcher\CityFetcher:
+        arguments:
+            $localFetchers: !tagged_iterator 'app.local_city_fetcher'
