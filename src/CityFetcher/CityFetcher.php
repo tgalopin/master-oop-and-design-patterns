@@ -4,7 +4,7 @@ namespace App\CityFetcher;
 
 use App\Model\Weather;
 
-class CityFetcher
+class CityFetcher implements CityFetcherInterface
 {
     /**
      * @var LocalCityFetcherInterface[]

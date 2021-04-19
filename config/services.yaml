@@ -36,3 +36,6 @@ services:
     App\CityFetcher\CityFetcher:
         arguments:
             $localFetchers: !tagged_iterator 'app.local_city_fetcher'
+
+    App\CityFetcher\CityFetcherInterface:
+        alias: 'App\CityFetcher\CityFetcher'
